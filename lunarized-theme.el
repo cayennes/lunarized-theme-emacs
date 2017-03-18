@@ -1,13 +1,13 @@
 
 ;;; lunarized-theme-emacs.el --- Emacs theme with a light background.
 
-;; Copyright (C) 2017 , Cayenne Geis
+;; Copyright (C) 2017, Cayenne Geis
 
 ;; Author: Cayenne Geis
 ;; https://github.com/cayennes/lunarized-theme-emacs
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "24"))
-;; Created with emacs-theme-generator, https://github.com/mswift42/theme-creator.
+;; Based on initial version created with emacs-theme-generator, https://github.com/mswift42/theme-creator.
 
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@
 
 ;;; Code:
 
- (deftheme Lunarized)
+ (deftheme lunarized)
  (let ((class '((class color) (min-colors 89)))
        (fg1 "#657b83")
        (fg2 "#71858c")
@@ -49,9 +49,17 @@
        (str     "#93a1a1")
        (type    "#657b83")
        (var     "#657b83")
-       (warning "#586e75"))
+       (warning "#586e75")
+       (yellow    "#b58900")
+       (orange    "#cb4b16")
+       (red       "#dc322f")
+       (magenta   "#d33682")
+       (violet    "#6c71c4")
+       (blue      "#268bd2")
+       (cyan      "#2aa198")
+       (green     "#859900"))
    (custom-theme-set-faces
-   'Lunarized
+   'lunarized
         `(default ((,class (:background ,bg1 :foreground ,fg1))))
         `(font-lock-builtin-face ((,class (:foreground ,builtin))))
         `(font-lock-comment-face ((,class (:foreground ,comment))))
@@ -137,7 +145,7 @@
         `(js3-function-param-face ((,class (:foreground ,key3))))
         `(js3-jsdoc-tag-face ((,class (:foreground ,keyword))))
         `(js3-instance-member-face ((,class (:foreground ,const))))
-	`(warning ((,class (:foreground ,warning)))) 
+	`(warning ((,class (:foreground ,warning))))
 	`(ac-completion-face ((,class (:underline t :foreground ,keyword))))
 	`(info-quoted-name ((,class (:foreground ,builtin))))
 	`(info-string ((,class (:foreground ,str))))
@@ -148,14 +156,15 @@
         `(undo-tree-visualizer-register-face ((,class :foreground ,type)))
 	`(slime-repl-inputed-output-face ((,class (:foreground ,type))))
         `(trailing-whitespace ((,class :foreground nil :background ,warning)))
-        `(rainbow-delimiters-depth-1-face ((,class :foreground ,fg1)))
-        `(rainbow-delimiters-depth-2-face ((,class :foreground ,type)))
-        `(rainbow-delimiters-depth-3-face ((,class :foreground ,var)))
-        `(rainbow-delimiters-depth-4-face ((,class :foreground ,const)))
-        `(rainbow-delimiters-depth-5-face ((,class :foreground ,keyword)))
-        `(rainbow-delimiters-depth-6-face ((,class :foreground ,fg1)))
-        `(rainbow-delimiters-depth-7-face ((,class :foreground ,type)))
-        `(rainbow-delimiters-depth-8-face ((,class :foreground ,var)))
+        `(rainbow-delimiters-outermost-only-face-count 0)
+        `(rainbow-delimiters-max-face-count 7)
+        `(rainbow-delimiters-depth-1-face ((,class :foreground ,violet :weight extra-bold)))
+        `(rainbow-delimiters-depth-2-face ((,class :foreground ,blue :weight extra-bold)))
+        `(rainbow-delimiters-depth-3-face ((,class :foreground ,cyan :weight extra-bold)))
+        `(rainbow-delimiters-depth-4-face ((,class :foreground ,green :weight extra-bold)))
+        `(rainbow-delimiters-depth-5-face ((,class :foreground ,yellow :weight extra-bold)))
+        `(rainbow-delimiters-depth-6-face ((,class :foreground ,orange :weight extra-bold)))
+        `(rainbow-delimiters-depth-7-face ((,class :foreground ,magenta :weight extra-bold)))
         `(magit-item-highlight ((,class :background ,bg3)))
         `(magit-section-heading        ((,class (:foreground ,keyword :weight bold))))
         `(magit-hunk-heading           ((,class (:background ,bg3))))
@@ -247,10 +256,10 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'Lunarized)
+(provide-theme 'lunarized)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; Lunarized-theme.el ends here
+;;; lunarized-theme.el ends here
